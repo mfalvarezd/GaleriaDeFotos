@@ -7,19 +7,42 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import modelo.*;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;
+    static Usuario usuarioLogeado;
 
     @Override
     public void start(Stage stage) throws IOException {
+        ArrayList<Persona> personas = new ArrayList<>();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
         scene = new Scene(loadFXML("primary"), 1200,720);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    public void crearAlbum(String nombre, String descripcion){
+        usuarioLogeado.getGaleria().getAlbumes().add(new Album(nombre,descripcion));
+    
+    }
+    public void mostrarAlbumes(){
+        for(Album album : usuarioLogeado.getGaleria().getAlbumes()){
+            System.out.println(album);
+        }
     }
 
     static void setRoot(String fxml) throws IOException {
