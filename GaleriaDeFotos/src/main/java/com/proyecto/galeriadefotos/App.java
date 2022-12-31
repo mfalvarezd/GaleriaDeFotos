@@ -1,5 +1,8 @@
 package com.proyecto.galeriadefotos;
 
+import com.proyecto.modelo.Usuario;
+import com.proyecto.modelo.Album;
+import com.proyecto.modelo.Persona;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +11,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import modelo.*;
 
 public class App extends Application {
 
@@ -20,17 +22,9 @@ public class App extends Application {
         ArrayList<Persona> personas = new ArrayList<>();
         ArrayList<Usuario> usuarios = new ArrayList<>();
         
+ 
         
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        scene = new Scene(loadFXML("primary"), 1200,720);
+        scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
     }
