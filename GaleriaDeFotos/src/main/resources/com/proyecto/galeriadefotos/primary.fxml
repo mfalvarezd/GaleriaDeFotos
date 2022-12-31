@@ -3,28 +3,65 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="169.0" prefWidth="262.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.PrimaryController">
-   <center>
-      <VBox alignment="CENTER" spacing="20.0">
-         <children>
-            <Label text="Primary View" />
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-   </center>
-   <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER" />
-   </top>
-   <left>
-       
-            <Label fx:id="lbIzq" onMouseClicked="#cambiarTexto" text="Label" BorderPane.alignment="CENTER" />
-   </left>
-</BorderPane>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.PrimaryController">
+   <children>
+      <BorderPane layoutY="14.0" prefHeight="394.0" prefWidth="600.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="117.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/Logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label text="Bienvenido a MiGaleria">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox fx:id="pContenido" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblMessage" text="Mensaje" visible="false" />
+                  <Label text="Iniciar Sesion" />
+                  <Label text="Usuario" />
+                  <TextField fx:id="tfUser" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="219.0" />
+                  <Label text="Contraseña" />
+                  <TextField fx:id="tfPass" maxWidth="-Infinity" prefHeight="26.0" prefWidth="218.0" />
+                  <Label fx:id="lblMsg" text="Label" visible="false" />
+                  <Button fx:id="btnAcceder" mnemonicParsing="false" text="Acceder" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox fx:id="buttonBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnRegistro" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
+                  <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#Salir" prefHeight="26.0" prefWidth="67.0" text="Salir" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
