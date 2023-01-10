@@ -9,11 +9,17 @@ public class Usuario {
     private String usuario;
     private String password;
     private Galeria galeria;
+    private Persona persona;
 
-    public Usuario(String usuario, String password) {
+    public Usuario(String usuario, String password,Persona persona) {
         this.usuario = usuario;
         this.password = password;
+        this.persona = persona;
         this.galeria = new Galeria();
+    }
+
+    public Persona getPersona() {
+        return persona;
     }
 
     public String getUsuario() {

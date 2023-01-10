@@ -24,6 +24,9 @@ public class Galeria extends Album{
     public void setAlbumes(ArrayList<Album> albumes) {
         this.albumes = albumes;
     }
+    public void crearAlbum(String nombre, String descripcion){
+        albumes.add(new Album(nombre,descripcion));
+    }
     
 
     

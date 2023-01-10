@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.PrimaryController">
+<AnchorPane fx:id="paneR" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.PrimaryController">
    <children>
-      <BorderPane layoutY="14.0" prefHeight="394.0" prefWidth="600.0">
+      <BorderPane fx:id="paneP" layoutY="14.0" prefHeight="394.0" prefWidth="600.0">
          <top>
             <HBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
@@ -43,11 +43,11 @@
                   <Label fx:id="lblMessage" text="Mensaje" visible="false" />
                   <Label text="Iniciar Sesion" />
                   <Label text="Usuario" />
-                  <TextField fx:id="tfUser" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="219.0" />
+                  <TextField fx:id="tfusuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="219.0" />
                   <Label text="Contraseña" />
-                  <TextField fx:id="tfPass" maxWidth="-Infinity" prefHeight="26.0" prefWidth="218.0" />
+                  <TextField fx:id="tfContra" maxWidth="-Infinity" onKeyTyped="#enter" prefHeight="26.0" prefWidth="218.0" />
                   <Label fx:id="lblMsg" text="Label" visible="false" />
-                  <Button fx:id="btnAcceder" mnemonicParsing="false" text="Acceder" />
+                  <Button fx:id="btnAcceder" mnemonicParsing="false" onAction="#iniciarSesion" text="Acceder" />
                </children>
             </VBox>
          </center>

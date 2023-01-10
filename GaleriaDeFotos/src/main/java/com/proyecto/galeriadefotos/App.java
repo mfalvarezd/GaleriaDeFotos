@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 public class App extends Application {
 
@@ -19,16 +20,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        ArrayList<Persona> personas = new ArrayList<>();
-        ArrayList<Usuario> usuarios = new ArrayList<>();
-        
  
-        
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
+        stage.setTitle("MiGaleria");
+        stage.getIcons().add(new Image("file:img/icon.png"));
         stage.show();
     }
-    
+        
     public void crearAlbum(String nombre, String descripcion){
         usuarioLogeado.getGaleria().getAlbumes().add(new Album(nombre,descripcion));
     
