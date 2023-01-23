@@ -4,12 +4,18 @@
  */
 package com.proyecto.modelo;
 
+import java.io.Serializable;
 
-public class Usuario {
+
+public class Usuario implements Serializable{
     private String usuario;
     private String password;
     private Galeria galeria;
     private Persona persona;
+
+    public Usuario() {
+    }
+    
 
     public Usuario(String usuario, String password,Persona persona) {
         this.usuario = usuario;

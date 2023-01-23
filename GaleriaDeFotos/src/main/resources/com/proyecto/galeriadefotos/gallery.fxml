@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -12,11 +13,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="bPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.GalleryController">
+<BorderPane fx:id="bPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="828.0" style="-fx-background-color: #BCD5F6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.galeriadefotos.GalleryController">
    <top>
       <VBox prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar>
+            <MenuBar fx:id="barraM" prefHeight="12.0" prefWidth="740.0">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -28,25 +29,26 @@
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="Cuenta">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem fx:id="cerrarSesion" mnemonicParsing="false" onAction="#logOut" text="Cerrar Sesion" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
             <HBox prefHeight="30.0" prefWidth="834.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#importarFotos" prefHeight="26.0" prefWidth="80.0" text="Import" />
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Collections" />
-                  <Button mnemonicParsing="false" text="TimeLine" />
-                  <Button mnemonicParsing="false" text="SlideShow" />
-                  <Button mnemonicParsing="false" text="EditPicture">
+                  <Button fx:id="btnImportar" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#importarFotos" prefHeight="26.0" prefWidth="90.0" text="Import" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#collections" prefHeight="26.0" prefWidth="89.0" text="Collections" />
+                  <Button mnemonicParsing="false" onAction="#anadirPersonas" prefHeight="26.0" prefWidth="177.0" text="Añadir personas" />
+                  <Button mnemonicParsing="false" onAction="#slideShow" prefHeight="26.0" prefWidth="150.0" text="SlideShow" />
+                  <Button fx:id="btnPicture" mnemonicParsing="false" onAction="#editarImg" prefHeight="26.0" prefWidth="141.0" text="EditPicture">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></Button>
-                  <TextField promptText="Search" />
-                  <Label fx:id="lblUser" prefHeight="18.0" prefWidth="130.0" text="Usuario: ">
+                  <TextField fx:id="tfBusqueda" promptText="Search" />
+                  <Button fx:id="btnBuscar" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Buscar" />
+                  <Label fx:id="lblUser" prefHeight="18.0" prefWidth="222.0" text="Usuario: ">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
@@ -60,33 +62,35 @@
       </VBox>
    </top>
    <bottom>
-      <HBox prefHeight="83.0" prefWidth="726.0" style="-fx-border-color: grey;" BorderPane.alignment="CENTER" />
+      <HBox fx:id="informacion" prefHeight="83.0" prefWidth="726.0" style="-fx-border-color: grey;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <ScrollPane prefHeight="329.0" prefWidth="537.0" style="foc: false;" BorderPane.alignment="CENTER">
+      <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="550.0" style="-fx-background-color: #BCD5F6;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
          <content>
             <VBox fx:id="panePrincipal" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="13.0" prefWidth="100.0" visible="false" />
-               </children>
-            </VBox>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></VBox>
          </content>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </ScrollPane>
    </center>
    <left>
-      <ScrollPane prefHeight="329.0" prefWidth="172.0" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="izqLateral" prefHeight="329.0" prefWidth="172.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
          <content>
-            <VBox fx:id="listaAlbum" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
-               <padding>
-                  <Insets top="5.0" />
-               </padding></VBox>
+            <Accordion fx:id="listaAlbum" prefHeight="74.0" prefWidth="203.0" />
          </content>
       </ScrollPane>
    </left>
+   <right>
+      <Label prefHeight="18.0" prefWidth="10.0" text="Label" visible="false" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

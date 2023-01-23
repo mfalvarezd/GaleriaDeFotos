@@ -4,10 +4,11 @@
  */
 package com.proyecto.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Galeria extends Album{
+public class Galeria extends Album implements Serializable{
     private ArrayList<Album> albumes;
     public Galeria(String nombre, String descripcion) {
         super(nombre,descripcion);

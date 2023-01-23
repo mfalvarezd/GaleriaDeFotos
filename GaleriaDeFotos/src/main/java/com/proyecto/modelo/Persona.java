@@ -4,8 +4,10 @@
  */
 package com.proyecto.modelo;
 
+import java.io.Serializable;
 
-public class Persona {
+
+public class Persona implements Serializable{
     private String nombres;
 
     public Persona(String nombres) {

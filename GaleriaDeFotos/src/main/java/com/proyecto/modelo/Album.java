@@ -4,10 +4,11 @@
  */
 package com.proyecto.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Album implements esCarpeta, Comparable<Album>{
+public class Album implements Comparable<Album>,Serializable{
     private String nombre;
     private String descripcion;
     private ArrayList<Fotografia> fotografias;
@@ -57,29 +58,30 @@ public class Album implements esCarpeta, Comparable<Album>{
         return a.descripcion.compareTo(this.descripcion);
     }
 
-    @Override
+
     public void moverFotografia(Fotografia f, Album a) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
     public void organizarFotografias() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+
     public void slideShowFotografias() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+
     public void mostrarFotografias() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
     public void anadirFotografias(Fotografia f) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.fotografias.add(f);
+    }
+    public void eliminarImagen(Fotografia f){
+        this.fotografias.remove(f);
     }
     
         
